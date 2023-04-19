@@ -8,7 +8,6 @@ const Header = ({cartCount}) => {
     
       <h1>Shoe-Store</h1>
       <div className='headercart'>
-      <i className="fa-solid fa-cart-shopping"></i>
       <p>{cartCount}  CART</p>
       </div>
       </div>

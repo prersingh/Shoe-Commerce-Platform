@@ -6,17 +6,22 @@ const Form = (props) => {
     const nameRef = useRef('')
     const descriptionRef = useRef('')
     const priceRef = useRef('')
-    const sizeRef = useRef('')
 
     const submitHandler = (event) => {
         event.preventDefault()
+        
 
         const data ={
             inputName:nameRef.current.value,
             inputDescription:descriptionRef.current.value,
             inputPrice:priceRef.current.value,
-            inputSize:sizeRef.current.value,
+            inputSize:document.getElementById('select').value,
         }
+
+            
+
+
+        
 
         props.addProduct(data)
 
@@ -34,7 +39,7 @@ const Form = (props) => {
         <input type="text" ref={descriptionRef} />
         <label htmlFor="brandname"> Price : </label>
         <input type="number" ref={priceRef} />
-        <label htmlFor='size' ref={sizeRef}>Shoe Size: </label>
+        <label htmlFor='size'>Shoe Size: </label>
         <select name='size' id='select'>
             <option value='Small'>Small</option>
             <option value='Medium'>Medium</option>

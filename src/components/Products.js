@@ -1,10 +1,14 @@
 import React from 'react'
 
-const Products = ({products,addToCart}) => {
+const Products = ({products,addToCart,deleteCart}) => {
 
     const addToCartHandler = () => {
         addToCart();
     }
+    const deleteToCartHandler = (product) => {
+        deleteCart(product);
+    }
+
     
 
 
@@ -19,7 +23,9 @@ const Products = ({products,addToCart}) => {
                 <div key={index}>
 
                     <h3>Shoes Name : {product.inputName} || Shoes Description : {product.inputDescription} || Shoes Price : {product.inputPrice} || Shoes Size : {product.inputSize}
-                    <button onClick={() => addToCartHandler(product)}>Add to Cart</button></h3>
+                    <button onClick={() => addToCartHandler(product)}>Add to Cart</button>
+                    <button onClick={() => deleteToCartHandler(product)}>Delete</button>
+</h3>
                     
         
                 </div>
